@@ -1,0 +1,19 @@
+ Volume in drive C is Acer
+ Volume Serial Number is 7652-B9D4
+
+ Directory of C:\
+
+31/03/2021  12:17 pm    <DIR>          $Recycle.Bin
+18/08/2025  03:01 pm    <DIR>          Config.Msi
+31/03/2021  12:08 pm    <JUNCTION>     Documents and Settings [C:\Users]
+21/08/2025  12:36 pm            12,288 DumpStack.log.tmp
+22/08/2025  11:50 am     3,166,404,608 hiberfil.sys
+31/03/2021  06:04 pm    <DIR>          OEM
+19/08/2025  01:16 pm    <DIR>          OneDriveTemp
+21/08/2025  12:36 pm    15,032,385,536 pagefile.sys
+19/02/2025  01:31 pm    <DIR>          ProgramData
+12/02/2025  12:10 pm    <DIR>          Recovery
+21/08/2025  12:36 pm        16,777,216 swapfile.sys
+31/03/2021  02:42 pm    <DIR>          System Volume Information
+               4 File(s) 18,215,579,648 bytes
+               8 Dir(s)  356,316,442,624 bytes free
