@@ -65,9 +65,27 @@ ECHO %PATH%
 PAUSE 
 CLS
 ::---------------------//----------------------
+::ECHO.
+::ECHO A11. Change the command prompt to include the time, the words "Hello, World" and the '>' character using prompt, with T for time and G for >
+::ECHO %time% Hello World>
+::PAUSE 
+::CLS
+::---------------------//----------------------
 ECHO.
-ECHO A11. Change the command prompt to include the time, the words "Hello, World" and the '>' character using prompt, with T for time and G for >
-ECHO %time% Hello World>
+ECHO A12. Create a new command window, with red coloured text and green background using cmd, color and /k
+START cmd /k color 2C
+PAUSE 
+CLS
+::---------------------//----------------------
+ECHO.
+ECHO A13. Create another new command window, with blue text and white background, with prompt that includes windows version number using START, cmd, colour, /k and $v$g for version
+START cmd /k "color F1 && prompt $v$g"
+PAUSE 
+CLS
+::---------------------//----------------------
+ECHO.
+ECHO A14. List all folders in C:WINDOWS\System32, sorted into alphabetical order - output listing to a file called "Batch Script File Output Data.txt" in "Output" subfolder using DIR
+DIR "C:\WINDOWS\System32" /ad /b |sort > "C:\Batch Script File Assignment\Output\Batch Script
 PAUSE 
 CLS
 
