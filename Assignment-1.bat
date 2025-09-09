@@ -65,41 +65,41 @@ ECHO %PATH%
 PAUSE 
 CLS
 ::---------------------//----------------------
-::@ECHO on
-::ECHO.
-::ECHO A11. Change the command prompt to include the time, the words "Hello, World" and the '>' character using prompt, with T for time and G for >
-::PROMPT $t Hello, World$g
-::PAUSE 
-::CLS
+@ECHO on
+ECHO A11. Change the command prompt to include the time, the words "Hello, World" and the '>' character using prompt, with T for time and G for character
+PROMPT "Hello World" $T $G
+ECHO.
+PAUSE 
+CLS
 ::---------------------//----------------------
 @ECHO off
 ECHO.
 ECHO A12. Create a new command window, with red coloured text and green background using cmd, color and /k
-START cmd /k color 2C
+START cmd /K COLOR 2C
 PAUSE 
 CLS
 ::---------------------//----------------------
 ECHO.
 ECHO A13. Create another new command window, with blue text and white background, with prompt that includes windows version number using START, cmd, colour, /k and $v$g for version
-START cmd /k "color F1 && prompt $v$g"
+START cmd /K "COLOR F1 && PROMPT $v$g"
 PAUSE 
 CLS
 ::---------------------//----------------------
 ECHO.
 ECHO A14. List all folders in C:WINDOWS\System32, sorted into alphabetical order - output listing to a file called "Batch Script File Output Data.txt" in "Output" subfolder using DIR
-DIR "C:\WINDOWS\System32" /ad /b |sort > "C:\My Batch Script File Assignment\Output\Batch Script File Output Data.txt"
+DIR "C:\WINDOWS\System32" /AD /B |sort > "C:\My Batch Script File Assignment\Output\Batch Script File Output Data.txt"
 PAUSE 
 CLS
 ::---------------------//----------------------
 ECHO.
 ECHO A15. List all text files whose names are up to seven characters long on the whole C: drive (wide format)the listing output must be appended to the end of “Batch Script File Output Data.txt”
-DIR C:\???????.txt /s /w >> "Batch Script File Output Data.txt"
+DIR C:\???????.txt /S /W >> "C:\My Batch Script File Assignment\Output\Batch Script File Output Data.txt"
 PAUSE 
 CLS
 ::---------------------//----------------------
 ECHO.
 ECHO A16. Delete folder “My Batch Script File Assignment”, together with all subfolders and their contents. 
-RMDIR /s "My Batch Script File Assignment"
+RMDIR /S "My Batch Script File Assignment"
 PAUSE 
 CLS
 ::---------------------//----------------------
@@ -111,9 +111,22 @@ CLS
 ::---------------------//----------------------
 ECHO.
 ECHO A18. Create a local user called “Bob”, then create a local group called “Awesome Users” and add Bob to it. 
-NET user Bob /add
-NET localgroup "Awesome Users" /add
-NET localgroup "Awesome Users" Bob /add
+NET user "Bob" "" /add 
+NET localgroup "Awesome Users" /all
+NET localgroup "Awesome Users" "Bob" /all
+PAUSE 
+CLS
+::---------------------//----------------------
+ECHO.
+ECHO A19. Delete 
+NET user "Bob" /delete
+NET localgroup "Awesome Users" /delete
+PAUSE 
+CLS
+::---------------------//----------------------
+ECHO.
+ECHO A20. 
+SCHTASKS /Create /SC weekly /D Sun /ST 22:00 /tr "cmd.exe /c chkdsk C:>"%USERPROFILE%/Desktop/chkdskResults.txt"" /tn "ChkdskResults"
 PAUSE 
 CLS
 
