@@ -42,19 +42,19 @@ CLS
 ::---------------------//----------------------
 ECHO.
 ECHO A7. List all hidden files in the root directory of the C:drive - output the listing to a file called "Input Data.txt" in the "Input" subfolder using dir to look inside container, and /a:h to ask for hidden files 
-DIR C:\ /a:h > "C:\My Batch Script File Assignment\Input\Input Data.txt"
+DIR C:\ /A:H > "C:\My Batch Script File Assignment\Input\Input Data.txt"
 PAUSE 
 CLS
 ::---------------------//----------------------
 ECHO.
 ECHO A8. Make a backup copy of "Input Data.txt" on the root of the C:drive, and with the same name, but with extension ".bak" using copy
-COPY "C:\My Batch Script File Assignment\Input\Input Data.txt" "C:Input Data.bak"
+COPY "C:\My Batch Script File Assignment\Input\Input Data.txt" "C:\Input Data.bak"
 PAUSE 
 CLS
 ::---------------------//----------------------
 ECHO.
 ECHO A9. Go to directory of the C:drive using cd
-CD /d C:\
+CD /D C:\
 PAUSE 
 CLS
 ::---------------------//----------------------
@@ -110,23 +110,23 @@ PAUSE
 CLS
 ::---------------------//----------------------
 ECHO.
-ECHO A18. Create a local user called “Bob”, then create a local group called “Awesome Users” and add Bob to it. 
+ECHO A18. Create a local user called “Bob”, then create a local group called “Awesome Users” and add Bob to it using NET
 NET user "Bob" "" /add 
-NET localgroup "Awesome Users" /all
-NET localgroup "Awesome Users" "Bob" /all
+NET localgroup "Awesome Users" /add
+NET localgroup "Awesome Users" "Bob" /add
 PAUSE 
 CLS
 ::---------------------//----------------------
 ECHO.
-ECHO A19. Delete 
+ECHO A19. Delete the group “Awesome Users” and delete the user “Bob”
 NET user "Bob" /delete
 NET localgroup "Awesome Users" /delete
 PAUSE 
 CLS
 ::---------------------//----------------------
 ECHO.
-ECHO A20. 
-SCHTASKS /Create /SC weekly /D Sun /ST 22:00 /tr "cmd.exe /c chkdsk C:>"%USERPROFILE%/Desktop/chkdskResults.txt"" /tn "ChkdskResults"
+ECHO A20. Create a task to be scheduled at 10 pm every Sunday that will check the C disk for errors and write the results to a file called “chkdskResults.txt” on the desktop using schtasks syntax. You need RL highest to run with elevated privileges
+SCHTASKS /Create /SC weekly /D Sun /ST 22:00 /TR "cmd.exe /c chkdsk C: > \"%USERPROFILE%\Desktop\chkdskResults.txt\"" /TN "ChkdskResults" /RL HIGHEST
 PAUSE 
 CLS
 
